@@ -23,10 +23,3 @@ Before using run the following command:
 Then run the following to make our test script executable:
 
 `chmod +x ./test.sh`
-
-
-## ToDo:
-- [x] Basic assertion test
-- [ ] Basic doc test
-- [ ] Basic test with types @spec
-- [ ] Alternative assertion tests (refute, assert_raise, assert_receive, refute_receive)
