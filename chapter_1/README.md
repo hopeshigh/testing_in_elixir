@@ -1,8 +1,8 @@
-# Fear of Testing: Chapter 1
+# Testing in Elixir: Chapter 1
 
 ## Description
 
-This repo is an accompaniment to the blog found at: [Feat of Testing in Elixir: Chapter 1]()
+This repo is an accompaniment to the blog found at: [Testing in Elixir: Chapter 1]()
 
 We will start off with a very simple example, build upon it and get comfortable
 using different assertions.

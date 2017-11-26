@@ -1,9 +1,9 @@
-defmodule FearOfTesting.Mixfile do
+defmodule Chapter1.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :fear_of_testing,
+      app: :chapter_1,
       version: "0.1.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env == :prod,

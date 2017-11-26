@@ -1,6 +1,6 @@
-defmodule FearOfTesting.CalculatorTypesTest do
+defmodule Chapter1.CalculatorTypesTest do
   use ExUnit.Case
-  alias FearOfTesting.CalculatorTypes
+  alias Chapter1.CalculatorTypes
 
   describe "add/2" do
     test "adds two numbers together" do

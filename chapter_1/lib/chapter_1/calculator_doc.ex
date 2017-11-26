@@ -1,4 +1,4 @@
-defmodule FearOfTesting.CalculatorDoc do
+defmodule Chapter1.CalculatorDoc do
 
 @moduledoc """
   Implements a basic Calculator that performs rudimentary calculations 
@@ -9,10 +9,10 @@ defmodule FearOfTesting.CalculatorDoc do
 
   ## Examples
 
-      iex> FearOfTesting.CalculatorDoc.add(2, 3)
+      iex> Chapter1.CalculatorDoc.add(2, 3)
       5
 
-      iex> FearOfTesting.CalculatorDoc.add("hello", "world")
+      iex> Chapter1.CalculatorDoc.add("hello", "world")
       "Incorrect type received as arguments"
 
   """

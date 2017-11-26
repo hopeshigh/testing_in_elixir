@@ -1,6 +1,6 @@
-defmodule FearOfTesting.CalculatorDocTest do
+defmodule Chapter1.CalculatorDocTest do
   use ExUnit.Case
-  alias FearOfTesting.CalculatorDoc
+  alias Chapter1.CalculatorDoc
 
   doctest CalculatorDoc
 end

@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure your application as:
 #
-#     config :fear_of_testing, key: :value
+#     config :chapter_1, key: :value
 #
 # and access this configuration in your application as:
 #
-#     Application.get_env(:fear_of_testing, :key)
+#     Application.get_env(:chapter_1, :key)
 #
 # You can also configure a 3rd-party app:
 #

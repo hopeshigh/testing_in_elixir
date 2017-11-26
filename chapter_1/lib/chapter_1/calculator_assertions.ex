@@ -1,4 +1,4 @@
-defmodule FearOfTesting.CalculatorAssertions do
+defmodule Chapter1.CalculatorAssertions do
 
   @moduledoc false
 

@@ -1,8 +1,8 @@
-# Fear of Testing
+# Testing in Elixir
 
 ## Description
 
-This repo is for a series of blog posts about conquering a fear of testing.
+This repo is for a series of blog posts about testing in Elixir.
 
 Testing in general is great, it is useful, and it helps you improve as a developer.
 

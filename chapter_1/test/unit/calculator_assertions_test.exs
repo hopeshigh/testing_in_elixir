@@ -1,6 +1,6 @@
-defmodule FearOfTesting.CalculatorAssertionsTest do
+defmodule Chapter1.CalculatorAssertionsTest do
   use ExUnit.Case
-  alias FearOfTesting.CalculatorAssertions
+  alias Chapter1.CalculatorAssertions
 
   describe "CalculatorAssertions" do
     test "methods only accept numbers" do
