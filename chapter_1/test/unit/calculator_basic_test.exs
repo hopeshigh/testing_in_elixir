@@ -1,4 +1,4 @@
-defmodule Chapter1.CalculatorTest do
+defmodule Chapter1.CalculatorBasicTest do
   use ExUnit.Case
   alias Chapter1.CalculatorBasic
 

@@ -4,7 +4,7 @@ defmodule Chapter1.CalculatorDoc do
   Implements a basic Calculator that performs rudimentary calculations 
 """
 
-   @doc """
+@doc """
   Adds two numbers together
 
   ## Examples
@@ -16,6 +16,7 @@ defmodule Chapter1.CalculatorDoc do
       "Incorrect type received as arguments"
 
   """
+  
   def add(a, b) when is_integer(a) and is_integer(b) do
     a + b
   end
