@@ -47,7 +47,6 @@ defmodule Chapter2.BasicListsTest do
       assert actual == expected
     end
 
-    @tag :this
     test "adds item to state when item is not a list" do
       actual = BasicLists.add_item([2, 2], 2)
       expected = [2, 2, 2]

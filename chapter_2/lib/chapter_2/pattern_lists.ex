@@ -1,4 +1,5 @@
 defmodule Chapter2.PatternLists do
+
   @moduledoc """
     A basic module to add elements of any type to a list
   """
