@@ -15,6 +15,23 @@ defmodule Chapter2.Maps.BasicMapsTest do
     end
   end
 
+  describe "build_map_of_emotions/1" do
+    test "returns a map of chosen emotion" do
+      expected = %{
+      name: "Dave :(",
+      age: "40 :(",
+      city: "London :(",
+      occupation: "Lumberjack :(",
+      sport: "Football :(",
+      food: "Thai :(",
+      place: "Australia :("
+    }
+      actual = BasicMaps.build_map_of_emotions(:sad)
+
+      assert expected == actual
+    end
+  end
+
   describe "extract_values/1" do
     test "returns the key/value for a chosen key" do
       expected = %{name: "Dave"}

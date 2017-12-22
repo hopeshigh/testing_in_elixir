@@ -24,6 +24,16 @@ defmodule Chapter2.Maps.BasicMaps do
     construct_map(request)
   end
 
+ @doc """
+    Returns a default map with your chosen emotion
+  """
+  @spec build_map_of_emotions(emotion :: atom) :: map
+  def build_map_of_emotions(emotion) do
+    request = {emotion, initialState()}
+
+    construct_map(request)
+  end
+
   @doc """
     Returns the values of chosen keys as a map
   """
@@ -84,12 +94,9 @@ defmodule Chapter2.Maps.BasicMaps do
       age: 40,
       city: "London",
       occupation: "Lumberjack",
-      todays_date: DateTime.utc_now(),
-      favourites: %{
-        sport: "Football",
-        food: "Thai",
-        place: "Australia"
-      }
+      sport: "Football",
+      food: "Thai",
+      place: "Australia"
     }
   end
 end
