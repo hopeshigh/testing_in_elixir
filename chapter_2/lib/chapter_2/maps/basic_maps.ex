@@ -1,24 +1,22 @@
 defmodule Chapter2.Maps.BasicMaps do
   @moduledoc """
-    A basic module to extract values from a map and return another map
+    A basic module to extract values from a map and return another map.
+    The resulting map is themed by emotion
   """
 
   @doc """
     Extracts specific values from a map
-    Transforms these values into another map
+    Transforms these values into another map based on emotion
     Returns this map
 
   ## Examples
 
-      iex> Chapter2.Maps.BasicMaps.get_value(:name)
-      "Dave"
+      iex> Chapter2.Maps.BasicMaps.build_map_of_emotions(:excited, [:name])
+      %{name: "DAVE!!!!"}
 
 
   """
 
-  @doc """
-    Returns a map of chosen pairs and emotion
-  """
   @spec build_map_of_emotions(emotion :: atom, values :: [atom]) :: map
   def build_map_of_emotions(emotion, values) do
     request = {emotion, extract_values(values)}
@@ -86,7 +84,7 @@ defmodule Chapter2.Maps.BasicMaps do
       age: 40,
       city: "London",
       occupation: "Lumberjack",
-      todays_date: DateTime.utc_now()
+      todays_date: DateTime.utc_now(),
       favourites: %{
         sport: "Football",
         food: "Thai",
