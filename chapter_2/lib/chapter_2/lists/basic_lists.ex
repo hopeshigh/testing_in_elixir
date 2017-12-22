@@ -1,5 +1,4 @@
-defmodule Chapter2.PatternLists do
-
+defmodule Chapter2.Lists.BasicLists do
   @moduledoc """
     A basic module to add elements of any type to a list
   """
@@ -11,13 +10,13 @@ defmodule Chapter2.PatternLists do
 
   ## Examples
 
-      iex> Chapter2.PatternLists.add_item(2, 3)
+      iex> Chapter2.Lists.BasicLists.add_item(2, 3)
       [2, 3]
 
-      iex> Chapter2.PatternLists.add_item([2], [3])
+      iex> Chapter2.Lists.BasicLists.add_item([2], [3])
       [2, 3]
 
-      iex> Chapter2.PatternLists.add_item("Hello", "World")
+      iex> Chapter2.Lists.BasicLists.add_item("Hello", "World")
       ["Hello", "World"]
 
   """

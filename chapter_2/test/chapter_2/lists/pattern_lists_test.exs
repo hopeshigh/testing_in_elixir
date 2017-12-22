@@ -1,8 +1,8 @@
-defmodule Chapter2.PatternListsTest do
+defmodule Chapter2.Lists.PatternListsTest do
   use ExUnit.Case
-  doctest Chapter2.PatternLists
-  
-  alias Chapter2.PatternLists
+  doctest Chapter2.Lists.PatternLists
+
+  alias Chapter2.Lists.PatternLists
 
   describe "add_item/2" do
     test "adds input to an empty list" do
@@ -43,6 +43,20 @@ defmodule Chapter2.PatternListsTest do
     test "combines two inputs of different types into a list" do
       actual = PatternLists.add_item("Hello", %{hello: "Dave"})
       expected = ["Hello", %{hello: "Dave"}]
+
+      assert ^expected = actual
+    end
+
+    test "adds item to state when item is not a list" do
+      actual = PatternLists.add_item([2, 2], 2)
+      expected = [2, 2, 2]
+
+      assert ^expected = actual
+    end
+
+    test "adds item to state when item is a list" do
+      actual = PatternLists.add_item([2, 2], [2])
+      expected = [2, 2, 2]
 
       assert ^expected = actual
     end
