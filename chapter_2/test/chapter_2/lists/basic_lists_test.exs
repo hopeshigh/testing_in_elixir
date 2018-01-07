@@ -1,8 +1,8 @@
-defmodule Chapter2.BasicListsTest do
+defmodule Chapter2.Lists.BasicListsTest do
   use ExUnit.Case
-  doctest Chapter2.BasicLists
+  doctest Chapter2.Lists.BasicLists
 
-  alias Chapter2.BasicLists
+  alias Chapter2.Lists.BasicLists
 
   describe "add_item/2" do
     test "adds input to an empty list" do

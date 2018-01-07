@@ -1,4 +1,5 @@
-defmodule Chapter2.TroublesomeLists do
+defmodule Chapter2.Lists.PatternLists do
+
   @moduledoc """
     A basic module to add elements of any type to a list
   """
@@ -10,13 +11,13 @@ defmodule Chapter2.TroublesomeLists do
 
   ## Examples
 
-      iex> Chapter2.TroublesomeLists.add_item(2, 3)
+      iex> Chapter2.Lists.PatternLists.add_item(2, 3)
       [2, 3]
 
-      iex> Chapter2.TroublesomeLists.add_item([2], [3])
+      iex> Chapter2.Lists.PatternLists.add_item([2], [3])
       [2, 3]
 
-      iex> Chapter2.TroublesomeLists.add_item("Hello", "World")
+      iex> Chapter2.Lists.PatternLists.add_item("Hello", "World")
       ["Hello", "World"]
 
   """

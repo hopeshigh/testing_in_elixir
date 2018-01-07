@@ -1,8 +1,8 @@
-defmodule Chapter2.TroublesomeListsTest do
+defmodule Chapter2.Lists.TroublesomeListsTest do
   use ExUnit.Case
-  doctest Chapter2.TroublesomeLists
-  
-  alias Chapter2.TroublesomeLists
+  doctest Chapter2.Lists.TroublesomeLists
+
+  alias Chapter2.Lists.TroublesomeLists
 
   describe "add_item/2" do
     test "adds charlist to an empty list" do
@@ -21,7 +21,7 @@ defmodule Chapter2.TroublesomeListsTest do
 
     test "a list of numbers returns a phrase" do
       actual = TroublesomeLists.add_item(
-        [104, 101, 108, 108, 111], 
+        [104, 101, 108, 108, 111],
         [100, 97, 118, 101]
       )
 
