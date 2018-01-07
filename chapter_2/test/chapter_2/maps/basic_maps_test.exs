@@ -1,73 +1,41 @@
 defmodule Chapter2.Maps.BasicMapsTest do
   use ExUnit.Case
-  doctest Chapter2.Maps.BasicMaps
 
   alias Chapter2.Maps.BasicMaps
 
-  describe "build_map_of_emotions/2" do
-    test "returns a map of chosen emotion" do
-      expected = %{
-        name: "Dave :("
+  describe "basic-map/0" do
+    test "matches the exact map via equality" do
+      expected_map =
+        %{
+          name: "Dave",
+          age: 40,
+          city: "London",
+          occupation: "Lumberjack",
+          sport: "Football",
+          food: "Thai",
+          place: "Australia"
         }
-      actual = BasicMaps.build_map_of_emotions(:sad, [:name])
 
-      assert expected == actual
-    end
-  end
+      actual_map = BasicMaps.basic_map()
 
-  describe "build_map_of_emotions/1" do
-    test "returns a map of chosen emotion" do
-      expected = %{
-      name: "Dave :(",
-      age: "40 :(",
-      city: "London :(",
-      occupation: "Lumberjack :(",
-      sport: "Football :(",
-      food: "Thai :(",
-      place: "Australia :("
-    }
-      actual = BasicMaps.build_map_of_emotions(:sad)
-
-      assert expected == actual
-    end
-  end
-
-  describe "extract_values/1" do
-    test "returns the key/value for a chosen key" do
-      expected = %{name: "Dave"}
-      actual = BasicMaps.extract_values([:name])
-
-      assert expected == actual
-    end
-  end
-
-  describe "construct_map/1" do
-    test "returns an excited map" do
-      expected = %{
-        occupation: "LUMBERJACK!!!!",
-        city: "LONDON!!!!"
-      }
-      map = %{
-        city: "London",
-        occupation: "Lumberjack"
-        }
-      actual = BasicMaps.construct_map({:excited, map})
-
-      assert expected == actual
+      assert actual_map == expected_map
     end
 
-    test "returns a sad map" do
-      expected = %{
-        occupation: "Lumberjack :(",
-        city: "London :("
-      }
-      map = %{
-        city: "London",
-        occupation: "Lumberjack"
-        }
-      actual = BasicMaps.construct_map({:sad, map})
+    test "pattern matches the map" do
+      actual_map = BasicMaps.basic_map()
 
-      assert expected == actual
+      assert %{
+        name: "Dave",
+        occupation: "Lumberjack",
+        place: "Australia"
+      } = actual_map
+    end
+
+    test "pattern matching on a previous value" do
+      expected_value = "Dave"
+      actual_map = BasicMaps.basic_map()
+
+      assert %{name: ^expected_value} = actual_map
     end
   end
 end
