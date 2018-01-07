@@ -17,7 +17,7 @@ Bonus points as testing in Elixir is a dream and actually pretty sane.
     * [Testing in Elixir: Chapter 1, Part 2](https://medium.com/@hoodsuphopeshigh/testing-in-elixir-chapter-1-introduction-e724a15d2f3)
 * Chapter 2: Getting comfortable with more data types
     * [Testing in Elixir: Chapter 2, Part 1 - Lists](https://medium.com/@hoodsuphopeshigh/testing-in-elixir-chapter-2-getting-comfortable-with-more-data-types-8174cac7ca7f)
-    * [Testing in Elixir: Chapter 2, Part 2 - Maps]()
+    * [Testing in Elixir: Chapter 2, Part 2 - Maps](https://medium.com/@hoodsuphopeshigh/testing-in-elixir-chapter-2-getting-comfortable-with-more-data-types-83fc2076f070)
 * Chapter 3: Async The All
 * Chapter 4: Processes, processes everywhere
 * Chapter 5: Ecto, all alone
