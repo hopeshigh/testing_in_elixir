@@ -5,20 +5,24 @@ defmodule Chapter3 do
 
   alias Chapter3.Github.Parser
 
-  def entry do
-    case request().request() do
+  def entry(url \\ github_url()) do
+    case request().call(url) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         Parser.parse(body)
 
       {:ok, %HTTPoison.Response{status_code: 404}} ->
-        IO.puts("Not found :(")
+        %{status_code: 404, message: "Not found :("}
 
       {:error, %HTTPoison.Error{reason: reason}} ->
-        IO.inspect(reason)
+        reason
     end
   end
 
   defp request do
     Application.get_env(:chapter_3, :github)
+  end
+
+  defp github_url do
+    "https://api.github.com/search/commits?q=remove+password&per_page=1"
   end
 end

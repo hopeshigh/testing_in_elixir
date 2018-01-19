@@ -1,12 +1,8 @@
 defmodule Chapter3.Github.Request do
   @behaviour Chapter3.Github
 
-  def request do
-    HTTPoison.get(github_url(), headers(), [])
-  end
-
-  defp github_url do
-    "https://api.github.com/search/commits?q=remove+password&per_page=1"
+  def call(url) do
+    HTTPoison.get(url, headers(), [])
   end
 
   defp headers do
