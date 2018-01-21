@@ -5,7 +5,7 @@ defmodule Chapter3Test do
 
   describe "entry/1" do
     test "returns a map on a successful request" do
-      actual = Chapter3.entry(:valid_url)
+      actual = Chapter3.fetch("valid_url")
       expected_name = "Fake Dave"
       expected_email = "dave@fakeemail.test"
 
@@ -14,12 +14,12 @@ defmodule Chapter3Test do
 
     test "returns a 404 message for an invalid url" do
       expected = %{status_code: 404, message: "Not found :("}
-      assert expected == Chapter3.entry(:invalid_url)
+      assert expected == Chapter3.fetch("invalid_url")
     end
 
     test "returns the error message for an error" do
       expected = "Something went wrong"
-      assert expected == Chapter3.entry(:error)
+      assert expected == Chapter3.fetch("error")
     end
   end
 end

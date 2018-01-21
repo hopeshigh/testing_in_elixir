@@ -1,7 +1,7 @@
 defmodule Chapter3.Github.MockRequest do
   @behaviour Chapter3.Github
 
-  def call(:valid_url) do
+  def call("valid_url") do
     {:ok,
      %HTTPoison.Response{
        status_code: 200,
@@ -11,12 +11,12 @@ defmodule Chapter3.Github.MockRequest do
   end
 
 
-  def call(:invalid_url) do
+  def call("invalid_url") do
     {:ok, %HTTPoison.Response{status_code: 404}}
   end
 
 
-  def call(:error) do
+  def call("error") do
     {:error, %HTTPoison.Error{reason: "Something went wrong"}}
   end
 end

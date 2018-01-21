@@ -5,7 +5,7 @@ defmodule Chapter3 do
 
   alias Chapter3.Github.Parser
 
-  def entry(url \\ github_url()) do
+  def fetch(url \\ github_url()) do
     case request().call(url) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         Parser.parse(body)
