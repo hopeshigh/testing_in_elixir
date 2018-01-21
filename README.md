@@ -19,7 +19,7 @@ Bonus points as testing in Elixir is a dream and actually pretty sane.
     * [Testing in Elixir: Chapter 2, Part 1 - Lists](https://medium.com/@hoodsuphopeshigh/testing-in-elixir-chapter-2-getting-comfortable-with-more-data-types-8174cac7ca7f)
     * [Testing in Elixir: Chapter 2, Part 2 - Maps](https://medium.com/@hoodsuphopeshigh/testing-in-elixir-chapter-2-getting-comfortable-with-more-data-types-83fc2076f070)
 * Chapter 3: Going outside...
-    * [Testing in Elixir: Chapter 3]()
+    * [Testing in Elixir: Chapter 3](https://medium.com/@hoodsuphopeshigh/testing-in-elixir-chapter-3-the-outside-world-is-scary-96748c920d9b)
 * Chapter 4: Processes, processes everywhere
 * Chapter 5: Ecto, all alone
 * Chapter 6: GenServers aka Who needs postgres
