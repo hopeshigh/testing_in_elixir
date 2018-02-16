@@ -13,7 +13,7 @@ defmodule Chapter4.BasicProcess do
 
   def receiver do
     receive do
-      {:hello, msg} -> IO.puts(msg)
+      {:hello, msg} -> IO.puts("Hello, #{msg}")
       {_, _} -> IO.puts("This will handle anything!")
     end
   end

@@ -11,7 +11,6 @@ defmodule Chapter4.BasicProcessTest do
       expected_messages = []
 
       assert %{current_function: ^expected_initial_call, messages: ^expected_messages} = process_as_map
-
       assert Process.alive?(process) == true
     end
 
@@ -24,7 +23,6 @@ defmodule Chapter4.BasicProcessTest do
       send process, {:hello, message}
 
       assert_received {:trace, ^process, :receive, {:hello, ^message}}
-      assert Process.alive?(process) == true
     end
 
     test "handles other types of messages" do
@@ -36,10 +34,11 @@ defmodule Chapter4.BasicProcessTest do
       send process, {:another_case, message}
 
       assert_received {:trace, ^process, :receive, {:another_case, ^message}}
-      assert Process.alive?(process) == true
     end
+  end
 
-    test "cannot handle multiple messages" do
+  describe "edge cases when testing processess" do
+    test "receives multiple messages when it shouldn't" do
       process = BasicProcess.start()
       message = "World"
       message_2 = "Dave"
@@ -54,9 +53,29 @@ defmodule Chapter4.BasicProcessTest do
 
       assert_received {:trace, ^process, :receive, {:hello, ^message_2}}
 
+      %{messages: process_mailbox} = Process.info(process) |> Enum.into(%{})
       assert Process.alive?(process) == true
+      assert length(process_mailbox) == 2
+    end
 
-      Process.info(process) |> Enum.into(%{}) |> IO.inspect()
+    test "correctly exits after receiving a message" do
+      process = BasicProcess.start()
+      message = "World"
+      message_2 = "Dave"
+
+      :erlang.trace(process, true, [:receive])
+
+      send process, {:hello, message}
+
+      assert_received {:trace, ^process, :receive, {:hello, ^message}}
+
+      :timer.sleep(100)
+
+      send process, {:hello, message_2}
+
+      refute_received {:trace, ^process, :receive, {:hello, ^message_2}}
+
+      assert Process.alive?(process) == false
     end
   end
 end
