@@ -21,6 +21,7 @@ Bonus points as testing in Elixir is a dream and actually pretty sane.
 * Chapter 3: Going outside...
     * [Testing in Elixir: Chapter 3](https://medium.com/@hoodsuphopeshigh/testing-in-elixir-chapter-3-the-outside-world-is-scary-96748c920d9b)
 * Chapter 4: Processes, processes everywhere
+    * [Testing in Elixir: Chapter 4]()
 * Chapter 5: Ecto, all alone
 * Chapter 6: GenServers aka Who needs postgres
 * Chapter 9: Inevitable introduction to Phoenix testing
