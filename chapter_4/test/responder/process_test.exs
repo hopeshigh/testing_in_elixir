@@ -17,7 +17,7 @@ defmodule Chapter4.ResponderProcessTest do
 
       %{messages: messages} = Process.info(caller_pid) |> Enum.into(%{})
 
-      assert %{status: ^response_status, message: ^response_message} = List.last(messages)
+      assert_receive %{status: ^response_status, message: ^response_message}
     end
   end
 end
