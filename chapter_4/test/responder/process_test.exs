@@ -13,9 +13,7 @@ defmodule Chapter4.ResponderProcessTest do
 
       send process, {:hello, message, caller_pid}
 
-      :timer.sleep(10)
-
-      %{messages: messages} = Process.info(caller_pid) |> Enum.into(%{})
+      Process.info(caller_pid) |> Enum.into(%{})
 
       assert_receive %{status: ^response_status, message: ^response_message}
     end
