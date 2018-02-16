@@ -22,10 +22,7 @@ defmodule Chapter4.RecursiveProcessTest do
 
       send process, {:hello, message}
 
-      assert_received {:trace, ^process, :receive, {:hello, ^message}}
-
-      :timer.sleep(500)
-
+      assert_receive {:trace, ^process, :receive, {:hello, ^message}}
       assert Process.alive?(process) == true
     end
 
@@ -37,10 +34,7 @@ defmodule Chapter4.RecursiveProcessTest do
 
       send process, {:another_case, message}
 
-      assert_received {:trace, ^process, :receive, {:another_case, ^message}}
-
-      :timer.sleep(500)
-
+      assert_receive {:trace, ^process, :receive, {:another_case, ^message}}
       assert Process.alive?(process) == true
     end
 
@@ -53,11 +47,11 @@ defmodule Chapter4.RecursiveProcessTest do
 
       send process, {:hello, message}
 
-      assert_received {:trace, ^process, :receive, {:hello, ^message}}
+      assert_receive {:trace, ^process, :receive, {:hello, ^message}}
 
       send process, {:hello, message_2}
 
-      assert_received {:trace, ^process, :receive, {:hello, ^message_2}}
+      assert_receive {:trace, ^process, :receive, {:hello, ^message_2}}
 
       %{messages: process_mailbox} = Process.info(process) |> Enum.into(%{})
 

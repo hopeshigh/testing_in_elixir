@@ -22,7 +22,7 @@ defmodule Chapter4.BasicProcessTest do
 
       send process, {:hello, message}
 
-      assert_received {:trace, ^process, :receive, {:hello, ^message}}
+      assert_receive {:trace, ^process, :receive, {:hello, ^message}}
     end
 
     test "handles other types of messages" do
@@ -33,7 +33,7 @@ defmodule Chapter4.BasicProcessTest do
 
       send process, {:another_case, message}
 
-      assert_received {:trace, ^process, :receive, {:another_case, ^message}}
+      assert_receive {:trace, ^process, :receive, {:another_case, ^message}}
     end
   end
 
@@ -47,11 +47,11 @@ defmodule Chapter4.BasicProcessTest do
 
       send process, {:hello, message}
 
-      assert_received {:trace, ^process, :receive, {:hello, ^message}}
+      assert_receive {:trace, ^process, :receive, {:hello, ^message}}
 
       send process, {:hello, message_2}
 
-      assert_received {:trace, ^process, :receive, {:hello, ^message_2}}
+      assert_receive {:trace, ^process, :receive, {:hello, ^message_2}}
 
       %{messages: process_mailbox} = Process.info(process) |> Enum.into(%{})
       assert Process.alive?(process) == true
@@ -67,13 +67,13 @@ defmodule Chapter4.BasicProcessTest do
 
       send process, {:hello, message}
 
-      assert_received {:trace, ^process, :receive, {:hello, ^message}}
+      assert_receive {:trace, ^process, :receive, {:hello, ^message}}
 
       :timer.sleep(100)
 
       send process, {:hello, message_2}
 
-      refute_received {:trace, ^process, :receive, {:hello, ^message_2}}
+      refute_receive {:trace, ^process, :receive, {:hello, ^message_2}}
 
       assert Process.alive?(process) == false
     end
