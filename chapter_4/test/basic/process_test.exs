@@ -42,6 +42,7 @@ defmodule Chapter4.BasicProcessTest do
     test "cannot handle multiple messages" do
       process = BasicProcess.start()
       message = "World"
+      message_2 = "Dave"
 
       :erlang.trace(process, true, [:receive])
 
@@ -49,8 +50,13 @@ defmodule Chapter4.BasicProcessTest do
 
       assert_received {:trace, ^process, :receive, {:hello, ^message}}
 
-      send process, {:hello, message}
+      send process, {:hello, message_2}
+
+      assert_received {:trace, ^process, :receive, {:hello, ^message_2}}
+
       assert Process.alive?(process) == true
+
+      Process.info(process) |> Enum.into(%{}) |> IO.inspect()
     end
   end
 end
