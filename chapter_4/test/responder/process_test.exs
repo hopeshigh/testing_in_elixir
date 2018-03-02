@@ -13,8 +13,6 @@ defmodule Chapter4.ResponderProcessTest do
 
       send process, {:hello, message, caller_pid}
 
-      Process.info(caller_pid) |> Enum.into(%{})
-
       assert_receive %{status: ^response_status, message: ^response_message}
     end
   end

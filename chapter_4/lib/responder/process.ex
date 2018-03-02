@@ -15,10 +15,9 @@ defmodule Chapter4.ResponderProcess do
     receive do
       {:hello, msg, caller} ->
         send(caller, %{status: :hello, message: "#{msg} received from #{inspect(caller)}"})
-        receiver()
       {_, _, caller} ->
         send(caller, %{status: :unknown, message: "Message received from #{inspect(caller)})"})
-        receiver()
     end
+    receiver()
   end
 end
