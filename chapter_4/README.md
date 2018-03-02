@@ -5,7 +5,7 @@
 This repo is an accompaniment to the blog found at:
 [Testing in Elixir: Chapter 4]()
 
-This chapter focuses on testing Processes, the much overlooked yet incredibly important aspect of Elixir
+This chapter focuses on testing Processes, a fundamental part of Elixir.
 
 ## Installation
 
